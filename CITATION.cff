@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: article
+title: "Second-Order Constraint Geometry (Σ₂)"
+
+authors:
+  - family-names: "Wells"
+    given-names: "A. R."
+    email: "arwells.research@proton.me"
+    affiliation: "Dual-Frame Research Group"
+
+abstract: >
+  Foundations paper introducing Second-Order Constraint Geometry (Σ₂): a structural,
+  diagnostic framework for systems in which admissibility depends on ordered histories
+  rather than instantaneous state alone. The framework distinguishes predictive sufficiency
+  from faithful state sufficiency (symmetry-preserving representational closure relative to
+  a fixed operational frame), and shows that state augmentation can restore prediction while
+  remaining unfaithful by breaking experimentally verified indistinguishabilities. A fully
+  worked two-qubit Hamiltonian example demonstrates physically realizable cases where
+  operationally indistinguishable boundary states admit divergent future diagnostics under
+  identical post-boundary evolution, yielding a falsifiable protocol for detecting Σ₂
+  structure without modifying standard unitary quantum mechanics.
+
+
+keywords:
+  - quantum foundations
+  - state sufficiency
+  - non-Markovianity
+  - operational frames
+  - admissible histories
+  - symmetry
+  - contextuality
+  - decoherence
+  - trajectory dependence
+  - no-go theorems
+
+license: "CC-BY-4.0"
+
+repository-code: "https://github.com/arwells-research/second-order-constraint-geometry"
+
+doi: "10.5281/zenodo.18149999"
+
+date-released: 2026-01-05
+
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Wells"
+      given-names: "A. R."
+  title: "Second-Order Constraint Geometry (Σ₂)"
+  year: 2026
+  publisher: "Zenodo"
+  doi: "10.5281/zenodo.18149999"
+  version: "v1"

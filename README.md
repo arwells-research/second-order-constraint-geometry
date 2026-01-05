@@ -1,4 +1,5 @@
 # Second-Order Constraint Geometry (Σ₂)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18149999.svg)](https://doi.org/10.5281/zenodo.18149999)
 
 **Author:** A. R. Wells  
 **Affiliation:** Dual-Frame Research Group  
@@ -126,12 +127,24 @@ Clean build artifacts:
 - Falsifiability criteria specified
 - Manuscript reviewed and submission-ready
 
-**Planned release:** Zenodo DOI (versioned)
+**Release:** Published on Zenodo (versioned)
+
+- **Version v1 DOI:** https://doi.org/10.5281/zenodo.18150000  
+- **All versions DOI:** https://doi.org/10.5281/zenodo.18149999
 
 ---
 
 ## Citation
 
-Once released, please cite the Zenodo DOI corresponding to the version used.
+If you use or reference this work, please cite the Zenodo record corresponding to
+the version used.
+
+**Recommended citation (v1):**
+
+A. R. Wells (2026). *Second-Order Constraint Geometry (Σ₂)* (v1).  
+Zenodo. https://doi.org/10.5281/zenodo.18150000
+
+For citation independent of version, use the **all-versions DOI**:
+https://doi.org/10.5281/zenodo.18149999
 
 This work is released under **Creative Commons Attribution 4.0 (CC BY 4.0)**.
