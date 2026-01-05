@@ -1,0 +1,109 @@
+\section{Toy Examples of Second-Order Constraint Geometry}
+\label{sec:toy-examples-sigma2}
+
+This section presents minimal, abstract examples illustrating diagnostic features
+associated with second-order constraint geometry $\Sigma_2$, without reference to
+any specific physical system. The purpose is not to establish irreducible
+second-order structure, nor to claim the impossibility of faithful state
+representation in general, but to make explicit how history-dependent
+admissibility can arise and how it manifests under state-based reduction.
+
+These examples are deliberately simplified. They function pedagogically, not as
+physical counterexamples, and are intended to illustrate patterns that motivate
+the diagnostic criteria developed in Sec.~\ref{sec:definition-sigma2}. Whether
+any particular toy constraint requires a second-order description in the sense
+of Definition~\ref{def:faithful-state-representation} is not asserted here.
+
+\subsection{Order-sensitive admissibility}
+
+Consider a system whose admissible histories consist of sequences of operations
+drawn from the set $\{A,B\}$, subject to the rule that operation $B$ is admissible
+only if it has been preceded by $A$.
+
+This constraint does not restrict the instantaneous availability of $A$ or $B$,
+nor does it impose any condition on a local state variable. Admissibility depends
+solely on ordering within a history. The sequence $(A,B)$ is admissible, while
+$(B,A)$ is not, despite both containing the same operations.
+
+Any reduced description that records only which operations occur, but not their
+order, fails to distinguish these histories. Admissibility is therefore not
+state-local, but relational across history segments. This illustrates a basic
+order-sensitive admissibility pattern characteristic of $\Sigma_2$ diagnostics.
+
+\subsection{Degeneracy under state-only reduction}
+
+Let $\mathcal{H}$ denote the space of all finite sequences over $\{A,B\}$, and let
+$\Pi$ map each history to the count vector $(n_A,n_B)$.
+
+Under this reduction, the admissible history $(A,B)$ and the inadmissible history
+$(B,A)$ are operationally indistinguishable. The reduction collapses distinct
+admissibility classes into a single state description.
+
+This degeneracy reflects loss of ordering information under state-only reduction.
+It does not, by itself, establish irreducible state insufficiency, but illustrates
+how admissibility distinctions can be erased when history-level relations are
+discarded.
+
+\begin{remark}
+Augmenting the state space with a variable indicating whether $A$ has occurred
+restores admissibility discrimination. This shows that state augmentation is
+possible in this toy system. However, the augmentation functions by explicitly
+encoding ordering information, thereby relocating history dependence into the
+state description rather than eliminating it.
+\end{remark}
+
+\subsection{Boundary-conditioned admissibility}
+
+Consider a variant in which admissibility is defined relative to a reference
+boundary: a history is admissible if the number of $A$ operations preceding the
+boundary equals the number of $B$ operations following it.
+
+This constraint depends jointly on pre- and post-boundary segments of a history.
+It cannot be evaluated at any single point along the sequence without reference
+to the boundary location. Any operational reduction that lacks access to this
+boundary information must either fix a boundary by convention, discard
+admissibility distinctions, or introduce an explicit asymmetry between segments.
+
+This example illustrates how boundary-conditioned admissibility can generate
+diagnostic failures under reduction, without asserting that faithful state
+representation is impossible in all realizations.
+
+\subsection{Order-sensitive transformation composition}
+
+Define two transformations on histories: $T_1$, which appends operation $A$, and
+$T_2$, which appends operation $B$.
+
+Under the constraint that $B$ requires a prior $A$, the composition
+$T_2 \circ T_1$ maps admissible histories to admissible histories, while
+$T_1 \circ T_2$ does not. Both compositions are well-defined as sequences, but
+only one preserves admissibility.
+
+This non-commutativity arises from admissibility structure rather than from
+algebraic properties of the transformations themselves. It serves as a simple
+illustration of order sensitivity, not as a proof of irreducible second-order
+structure.
+
+\subsection{Limits of symmetric state augmentation}
+
+One may attempt to restore state sufficiency by enlarging the state space to store
+information about prior operations. In the present toy examples, such
+augmentation is straightforward and effective.
+
+The diagnostic point is not that augmentation fails, but that it succeeds by
+encoding history-dependent relations explicitly. Whether such encoding preserves
+faithfulness in the sense of Definition~\ref{def:faithful-state-representation}
+depends on whether it respects the symmetry structure of the admissible-history
+space in question.
+
+\begin{remark}
+These toy examples do not establish the impossibility of faithful state
+representation. They illustrate why faithfulness must be assessed rather than
+assumed when admissibility depends on ordering, boundary conditions, or relational
+history structure.
+\end{remark}
+
+Taken together, these examples demonstrate how history-dependent admissibility
+can be obscured by state-only descriptions and how such obscuration produces
+diagnostic signatures associated with $\Sigma_2$. Whether these signatures
+indicate genuine second-order constraint geometry in a physical system is an
+empirical question, addressed in subsequent sections.

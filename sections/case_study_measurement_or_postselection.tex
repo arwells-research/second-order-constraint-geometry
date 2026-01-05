@@ -1,0 +1,130 @@
+\section{Case Study: Measurement and Post-Selection}
+\label{sec:case-measurement-postselection}
+
+This section provides a concrete case study illustrating the necessity of
+second-order constraint geometry $\Sigma_2$ within standard quantum-mechanical
+practice.
+The example concerns measurement and post-selection, chosen because it is
+uncontroversial, operationally precise, and ubiquitous across quantum
+experiments.
+
+The analysis does not depend on interpretational commitments.
+It relies only on standard measurement theory and experimentally realizable
+protocols.
+
+\subsection{Setup}
+
+Consider a quantum system prepared in an initial state $\rho_0$ at time $t_0$.
+At a later time $t_1$, a measurement is performed with outcomes labeled by
+$i$, associated with measurement operators $\{M_i\}$ satisfying
+$\sum_i M_i^\dagger M_i = \mathbb{I}$.
+
+Upon obtaining outcome $i$, the system is assigned the post-measurement state
+\[
+\rho_i = \frac{M_i \rho_0 M_i^\dagger}{\mathrm{Tr}(M_i^\dagger M_i \rho_0)}.
+\]
+
+This update rule is standard and uncontroversial.
+
+\subsection{State equivalence versus preparation equivalence}
+
+Now consider an alternative preparation procedure in which the system is
+directly prepared at time $t_1$ in the state $\rho_i$, without any prior
+measurement or conditioning.
+
+From the standpoint of quantum formalism, the two preparations are equivalent:
+the system is described by the same density operator $\rho_i$, and all future
+measurement statistics conditioned only on $\rho_i$ are identical.
+
+However, the two preparations are not operationally equivalent in all contexts.
+
+\subsection{Failure of admissibility equivalence}
+
+Although the instantaneous states coincide, the admissibility of subsequent
+operations may differ.
+
+Examples include:
+\begin{itemize}
+\item extension of the system to a larger Hilbert space including an apparatus
+      or environment,
+\item reversal or partial reversal of the measurement interaction,
+\item consistency of retrodictive inference about prior correlations.
+\end{itemize}
+
+In particular, a post-selected state $\rho_i$ obtained via measurement generally
+does not admit a unitary extension that erases the measurement record without
+access to additional degrees of freedom.
+By contrast, a directly prepared state $\rho_i$ may admit such an extension.
+
+This distinction cannot be recovered from the density operator alone.
+
+\subsection{Second-order constraint interpretation}
+
+From the standpoint of $\Sigma_2$, the difference between the two cases lies not
+in the state but in the admissible histories leading to that state.
+
+The post-selected ensemble is constrained by a conditioning boundary at the
+measurement event.
+Only trajectories consistent with outcome $i$ are admissible beyond that
+boundary.
+
+The directly prepared ensemble lacks this constraint.
+Its admissible histories are not restricted by a prior measurement outcome.
+
+Thus, the admissibility of future operations depends on ordered history, not
+solely on instantaneous state.
+
+The structural role of these measurement and post-selection examples can be made
+explicit by relating them directly to the symmetry analysis in
+Sec.~\ref{subsec:spin-half-symmetry-example}. In each case, admissible histories
+that are operationally indistinguishable at the level of the reduced state
+$\rho_S$ are related by transformations acting on degrees of freedom that are
+inaccessible or uncontrolled from the perspective of the reduced description.
+These transformations define an admissible-history symmetry: they act trivially
+on instantaneous state but nontrivially on the space of histories by altering
+which future operations (extensions, reversals, or conditional procedures)
+remain physically realizable.
+
+From this perspective, the distinction between directly prepared and
+post-selected states is not merely a matter of system boundary specification.
+Rather, it instantiates the same pattern identified in Sec.~3.5: a symmetry of
+the admissible-history space arising from operational indistinguishability, whose
+preservation prevents admissibility from factorizing through instantaneous state.
+The failure of faithful state sufficiency here is therefore structural and
+diagnostic, not an artifact of incomplete modeling or misuse of reduced states.
+
+\subsection{Relation to irreversibility}
+
+Having identified the symmetry-based origin of the admissibility distinction, this case study mirrors the structure identified in projection-induced arrow
+analyses.
+Measurement introduces a boundary-conditioned restriction on admissible
+histories, even when subsequent dynamics are unitary.
+
+Irreversibility arises not from intrinsic asymmetry in the dynamics, but from the
+constraint imposed by conditioning.
+This parallels the role of boundary selection in thermodynamic and decoherence
+contexts.
+
+\subsection{Why this is not an interpretational claim}
+
+Nothing in this analysis asserts that quantum states are incomplete, hidden, or
+epistemic.
+The quantum formalism remains fully valid for predicting measurement statistics.
+
+The point is classificatory:
+state descriptions are sufficient for prediction, but not for admissibility.
+
+$\Sigma_2$ provides a formal language for this distinction without modifying the
+dynamics or adding variables.
+
+\subsection{Summary}
+
+Measurement and post-selection provide a minimal example in which:
+\begin{enumerate}
+\item identical quantum states arise from distinct preparation histories,
+\item those histories impose different admissibility constraints,
+\item the difference is not encoded in the instantaneous state.
+\end{enumerate}
+
+This establishes the necessity of second-order constraint structure in at least
+one central domain of quantum practice.

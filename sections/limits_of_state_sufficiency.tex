@@ -1,0 +1,102 @@
+\section{Limits of State Sufficiency}
+\label{sec:limits-state-sufficiency}
+
+A defining assumption of standard physical formalisms is that the instantaneous
+state of a system provides a sufficient description for all future admissible
+evolution. In classical mechanics this role is played by phase-space points; in
+quantum mechanics by state vectors or density operators. Under this assumption, fixing the state fixes the space of physically realizable futures.
+
+This section identifies the precise sense in which this assumption holds, and the
+structural conditions under which it fails. The failure is not epistemic or
+approximate, but geometric: it arises when admissibility depends on ordered
+history rather than instantaneous configuration.
+
+\subsection{State sufficiency as a conditional principle}
+
+We say that a system admits a \emph{state-sufficient description} if there exists
+a state space $\mathcal{S}$ such that, for any two admissible histories
+$h_1,h_2$,
+\[
+\Pi(h_1,t)=\Pi(h_2,t) \;\Rightarrow\;
+\mathcal{F}(h_1,t)=\mathcal{F}(h_2,t),
+\]
+where $\Pi(h,t)$ denotes the instantaneous state at time $t$ and
+$\mathcal{F}(h,t)$ denotes the set of admissible future continuations.
+
+Under this condition, the instantaneous state determines not only future
+measurement statistics, but the full space of physically realizable operations.
+This requirement is stronger than predictive completeness: it asserts that
+admissibility itself is state-local.
+
+Standard formulations of mechanics implicitly assume this form of sufficiency.
+The assumption is not trivial; it is a substantive constraint on how physical
+structure may be represented.
+
+\subsection{Prediction versus admissibility}
+
+It is useful to distinguish two roles played by physical states. First, a state
+may be \emph{predictively sufficient}, in the sense that it determines the
+probabilities of future measurement outcomes. Second, it may be
+\emph{operationally sufficient}, in the sense that it determines which future
+transformations, reversals, or control operations are physically admissible.
+
+Quantum mechanics guarantees predictive sufficiency for isolated systems.
+However, predictive sufficiency does not entail operational sufficiency. A
+reduced state may correctly predict all future statistics while failing to encode
+which operations remain realizable. The distinction becomes visible precisely
+when control, reversibility, or extension of the system is considered.
+
+\subsection{When state sufficiency fails}
+
+State sufficiency fails whenever admissibility depends on relations between
+distinct segments of a history rather than on instantaneous configuration.
+In such regimes, two systems sharing the same state may nevertheless differ in
+the set of physically realizable futures.
+
+This situation arises in familiar contexts: when correlations are dispersed into
+inaccessible degrees of freedom, when conditioning or post-selection restricts
+which trajectories remain admissible, or when coarse-graining discards
+information relevant to control or reversal. In each case, the common feature is
+that admissibility is determined by ordered history rather than by state.
+
+\subsection{Formal characterization}
+
+Let $\mathcal{H}$ denote the space of admissible histories and
+$\Pi:\mathcal{H}\to\mathcal{S}$ a state projection. State sufficiency requires
+that $\Pi$ induce equivalence classes that are closed under future extension:
+\[
+\Pi(h_1)=\Pi(h_2)
+\;\Rightarrow\;
+\mathcal{C}^+(h_1)=\mathcal{C}^+(h_2),
+\]
+where $\mathcal{C}^+(h)$ denotes the admissible future continuations of $h$.
+
+When this condition fails, the state space $\mathcal{S}$ is insufficient to
+represent the system's full admissibility structure. The failure is structural: it
+reflects the fact that admissibility is not factorizable into instantaneous
+properties.
+
+\subsection{Second-order constraints}
+
+In regimes where state sufficiency fails, admissibility is governed by constraints
+on \emph{histories} rather than on states. These constraints act on ordering,
+accessibility, and composability of processes. They cannot be represented as
+predicates on instantaneous configurations without loss or distortion.
+
+The resulting structure is naturally described by a second-order constraint
+geometry $\Sigma_2$, whose elements are subsets of $\mathcal{H}$ closed under
+allowed transformations but not reducible to state equivalence classes. $\Sigma_2$
+does not modify dynamics or introduce new variables; it provides a language for
+constraints that are already operative but not state-local.
+
+\subsection{Relation to irreversibility and arrows}
+
+Many arrow-like phenomena arise precisely in regimes where state sufficiency
+fails. The apparent loss of reversibility reflects not a change in microscopic
+laws, but a restriction on admissible histories imposed by environmental
+coupling, conditioning boundaries, or control limitations.
+
+This clarifies why arrow-like behavior can coexist with time-reversal symmetric
+dynamics: the asymmetry lies in admissibility rather than in the equations of
+motion. The connection will be developed further in relation to
+projection-induced arrow constraints.

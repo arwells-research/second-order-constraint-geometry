@@ -1,0 +1,498 @@
+\section{Limits of First-Order (State-Based) Descriptions}
+\label{sec:first-order-limits}
+
+Section~\ref{sec:limits-state-sufficiency} established the failure of state
+sufficiency at the operational level: identical instantaneous descriptions can
+permit distinct admissible futures. This section formalizes the failure by identifying constraints that first-order descriptions cannot encode without structural distortion. This insufficiency holds relative to any fixed operational frame where admissibility and symmetry are defined.
+
+Many physical, computational, and informational theories represent system behavior
+using a \emph{first-order} description: the system is assumed to be fully
+characterized at any instant by a state variable, with future evolution determined
+by a rule acting on that state. This structure underwrites much of classical
+mechanics, statistical mechanics, stochastic processes, and quantum theory.
+
+The failure is not empirical or approximate, but geometric:
+it arises when admissibility depends on relations between segments of a history
+rather than on instantaneous state alone.
+
+\subsection{First-order sufficiency}
+
+Let $\mathcal{S}$ denote a state space, and let admissible evolution be specified by
+a map
+\[
+s_{t+1} = F(s_t),
+\]
+or more generally by a transition kernel $P(s_{t+1} \mid s_t)$. A description of
+this form is \emph{first-order sufficient} if the instantaneous state encodes all
+information relevant to future admissibility and observable behavior, such that
+conditioning on $s_t$ renders future evolution independent of prior history.
+
+When apparent history dependence arises, the standard response is to enlarge the
+state space so that the augmented state restores Markovian closure without altering
+the structural form of the dynamics. This move is often treated as unproblematic,
+and indeed succeeds whenever the relevant dependence can be represented as
+additional instantaneous variables.
+
+These assumptions jointly define what it means for a description to be genuinely
+first-order: admissibility factorizes through state, and any required refinement
+can be absorbed into a larger state space.
+
+\subsection{Histories and admissibility}
+
+Let $\mathcal{H}$ denote the space of admissible histories, where each history
+$h \in \mathcal{H}$ is an ordered sequence (or continuous curve) of states consistent
+with the system’s underlying laws or constraints. A first-order description
+implicitly assumes that admissibility of a history can be factorized into
+admissibility of its instantaneous states together with the local transition rule
+$F$.
+
+This factorization fails when admissibility depends on relations between distinct
+segments of a history rather than on instantaneous values alone. In such cases,
+ordering of transformations, feasibility of entire sequences, or compatibility
+with boundary conditions determines which continuations remain physically
+realizable. Admissibility is then a property of the history as a whole—*within a
+specified operational frame*- not of its individual states.
+
+\subsection{Why state augmentation fails}
+
+A natural attempt to restore first-order sufficiency in such situations is to
+enlarge the state space to encode relevant historical information. This strategy
+succeeds only when the constraint of interest is representational—when it can be
+captured as an additional instantaneous property without altering the symmetry
+structure of the admissible-history space.
+
+However, when admissibility depends on equivalence classes of histories under
+transformations that leave instantaneous states invariant, no symmetry-preserving state augmentation can encode the relevant structure
+without explicitly breaking those invariances \emph{at the representational level}. Any such encoding necessarily selects a representative from each equivalence class.
+This imports privileged parameters or boundary choices that are neither present nor independently verifiable within the original operational frame.
+
+The resulting description may reproduce observed behavior, but it no longer
+preserves the symmetries of the admissible-history space it purports to describe.
+The augmentation resolves prediction at the cost of structural fidelity.
+
+\subsection{Structural insufficiency of first-order descriptions}
+
+It is therefore essential to distinguish between \emph{dynamical insufficiency},
+which can be remedied by refining equations or adding variables, and
+\emph{structural insufficiency}, which cannot.
+
+\begin{proposition}[Structural insufficiency of first-order descriptions]
+\label{prop:first-order-insufficiency}
+There exist admissible-history spaces $\mathcal{H}$ equipped with symmetry-preserving
+admissibility constraints for which no state-based representation can simultaneously
+determine admissible future continuations from instantaneous state and preserve the
+symmetry structure of admissible-history equivalence classes.
+
+This is an existence claim: it does not assert that all physical systems exhibit
+such structure, only that such systems are physically realizable within standard
+quantum dynamics.
+
+In such cases, any state augmentation that restores predictive completeness does so
+only by introducing representational asymmetry, privileged boundary structure, or
+explicit history bookkeeping not present in the original admissible-history space.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Let $\mathcal{H}$ be an admissible-history space equipped with a symmetry group $G$
+acting on histories, inducing an equivalence relation $h \sim h'$ whenever $h$ and
+$h'$ are related by an element of $G$. Assume that the action of $G$ preserves all
+instantaneous state projections, so that histories equivalent under $G$ are
+indistinguishable at every individual time slice.
+
+Let $C$ be an admissibility constraint on $\mathcal{H}$ whose satisfaction depends on
+relational properties between distinct segments of a history and is invariant under
+the action of $G$. Such a constraint partitions $\mathcal{H}$ into admissibility
+classes that are not determined by instantaneous state alone.
+
+The relevant symmetry group $G$ is taken to represent experimentally verified
+indistinguishability relations within the operational frame under consideration,
+not abstract or post hoc equivalences.
+
+Suppose, for contradiction, that there exists a state-based representation
+$\Pi : \mathcal{H} \to \mathcal{S}$ that determines admissible future continuations
+solely from $\Pi(h)$ while preserving the equivalence classes induced by $G$.
+Because $C$ is not factorizable into instantaneous predicates, predictive sufficiency
+requires $\Pi$ to distinguish between histories that differ only in their relational
+structure. However, such histories lie in the same equivalence class under $G$.
+Distinguishing them therefore violates $G$-invariance by introducing implicit ordering,
+boundary marking, or trajectory bookkeeping.
+
+Thus no state-based representation can simultaneously determine admissible future
+evolution and preserve admissible-history symmetry. The insufficiency is therefore
+structural rather than epistemic.
+\end{proof}
+
+This result is not definitional: it follows from the requirement that any
+representation preserve the symmetry structure of admissible-history
+equivalence classes that are operationally verified within the chosen frame.
+Section~\ref{subsec:concrete-hamiltonian-example} provides an explicit physical
+realization of this situation.
+
+To distinguish genuine representational sufficiency from surrogate encodings that
+relocate history dependence, we introduce the following notion of faithfulness.
+
+A fully worked example with explicit Hamiltonians, demonstrating that histories
+$H_A$ and $H_B$ related by operationally undetectable transformations yield
+identical boundary states yet divergent diagnostics, is given in
+Appendix~\ref{subsec:symmetry-group}. The example shows explicitly why any state
+augmentation distinguishing admissible futures necessarily violates symmetries
+corresponding to experimentally verified indistinguishabilities.
+
+\subsection{Worked example: symmetry-induced failure of state sufficiency}
+\label{subsec:spin-half-symmetry-example}
+
+The abstract symmetry argument in Proposition~\ref{prop:first-order-insufficiency}
+can be made fully explicit with a minimal physical example in which the relevant
+symmetry group is operationally motivated rather than chosen ad hoc.
+
+\paragraph{System and admissible histories.}
+Consider a spin-$\tfrac{1}{2}$ system $S$ interacting with a measurement apparatus
+$A$. We assume standard quantum mechanics throughout. Admissible histories
+$h \in \mathcal{H}$ consist of ordered sequences of preparation, interaction, and
+registration events, possibly including intermediate couplings to uncontrolled
+degrees of freedom of $A$. No assumptions are made about collapse or interpretation;
+only operational distinguishability is relevant.
+
+We restrict attention to histories that yield the same verified reduced state
+$\rho_S$ for $S$ at a designated reference time $t^\ast$, after tracing over
+apparatus degrees of freedom. By construction, all such histories are
+indistinguishable at the level of instantaneous state.
+
+\paragraph{Operational symmetry group.}
+Let $G$ be the group of relabelings of inaccessible apparatus degrees of freedom
+that leave all reduced statistics of $S$ invariant. Concretely, elements of $G$
+act by unitary transformations on $A$ that commute with all observables accessible
+to the experimenter and therefore have no observable effect on $\rho_S$ at any
+time slice.
+
+This symmetry is not imposed for mathematical convenience; it reflects a physical
+indistinguishability. Different microscopic apparatus configurations related by
+$G$ cannot be operationally resolved and therefore represent the same physical
+situation at the level of instantaneous state.
+
+\paragraph{Trivial action on instantaneous state.}
+For any two histories $h,h' \in \mathcal{H}$ related by $g \in G$, the reduced
+state projections satisfy
+\[
+\Pi(h)(t) = \Pi(h')(t)
+\quad \text{for all } t,
+\]
+where $\Pi$ denotes projection onto the reduced state of $S$. Thus $G$ acts
+trivially on instantaneous state descriptions.
+
+\paragraph{Nontrivial action on histories.}
+Despite this state-level equivalence, histories related by $G$ may differ in
+their admissible future continuations. For example, correlations between $S$
+and inaccessible apparatus degrees of freedom may or may not be reversibly
+recoverable depending on the prior interaction structure, even when the reduced
+state $\rho_S$ is identical.
+
+Operationally, this difference appears when considering admissibility of future
+extensions: reversal protocols, recoherence operations, or consistent embedding
+into a larger Hilbert space may be possible for some histories and not others.
+These distinctions depend on relational properties across the history and are
+invariant under $G$.
+
+\paragraph{Failure of faithful state sufficiency.}
+Because admissible future continuations differ, we have
+\[
+\mathcal{C}^+(h) \neq \mathcal{C}^+(h')
+\]
+for some $G$-equivalent histories satisfying $\Pi(h)=\Pi(h')$. Any state-based
+representation that determines admissibility from instantaneous state therefore
+fails admissibility sufficiency.
+
+Attempting to restore sufficiency by augmenting the state would require encoding
+which correlations with apparatus degrees of freedom remain recoverable. However,
+this necessarily distinguishes between histories related by $G$, violating symmetry
+preservation. The augmentation succeeds only by selecting privileged representatives
+from each equivalence class of histories.
+
+\paragraph{Interpretation.}
+This example shows that the symmetry group $G$ arises from physical
+indistinguishability, not from representational choice. Its action is trivial on
+instantaneous state but nontrivial on admissible histories. The resulting failure
+of faithful state sufficiency is therefore structural, not interpretational, and
+cannot be eliminated by symmetry-preserving state augmentation.
+
+The example supplies a concrete instance of Proposition~\ref{prop:first-order-insufficiency}
+and motivates the faithfulness criteria introduced below.
+
+\begin{definition}[Faithful state representation]
+\label{def:faithful-state-representation}
+A state-based representation of an admissible-history space $\mathcal{H}$ is
+\emph{faithful} if there exists a projection
+\[
+\Pi : \mathcal{H} \to \mathcal{S}
+\]
+to a state space $\mathcal{S}$ such that:
+
+\begin{enumerate}
+\item \textbf{Admissibility sufficiency:}
+For any two histories $h_1,h_2 \in \mathcal{H}$,
+\[
+\Pi(h_1) = \Pi(h_2)
+\;\Rightarrow\;
+\mathcal{C}^+(h_1) = \mathcal{C}^+(h_2),
+\]
+where $\mathcal{C}^+(h)$ denotes the set of admissible future continuations of $h$.
+
+\item \textbf{Symmetry preservation:}
+If $h_1 \sim h_2$ under an admissible-history equivalence relation generated by a
+symmetry group $G$, then
+\[
+\Pi(h_1) = \Pi(h_2).
+\]
+That is, the state representation does not distinguish between histories that are
+equivalent under the symmetries of $\mathcal{H}$.
+
+\item \textbf{Boundary neutrality:}
+The projection $\Pi$ does not require the introduction of privileged temporal
+orientations, boundary selections, or ordering conventions that are not invariant
+under the symmetries of $\mathcal{H}$.
+\end{enumerate}
+
+If no such projection exists, the admissibility structure of $\mathcal{H}$ is
+said to be \emph{state-insufficient}.
+\end{definition}
+
+\subsection{Concrete Hamiltonian example: identical boundary state, distinct admissible futures}
+\label{subsec:concrete-hamiltonian-example}
+
+We now give a fully specified, physically realizable instance in which two
+admissible histories yield the \emph{same verified reduced boundary state} for the
+system, yet produce \emph{distinct post-boundary diagnostics} under identical
+subsequent evolution. The point is not that global unitary quantum mechanics
+fails (it does not), but that \emph{within a fixed operational frame} in which the
+environment is inaccessible at the boundary, admissibility of future operations
+fails to factorize through the reduced state.
+
+\paragraph{System, environment, and Hamiltonian.}
+Let $S$ and $E$ be qubits with joint Hilbert space
+$\mathcal{H}_{SE} = \mathbb{C}^2 \otimes \mathbb{C}^2$.
+Assume the post-boundary evolution block is generated by the fixed,
+time-reversal-symmetric interaction Hamiltonian
+\begin{equation}
+H_{SE} \;=\; \hbar g\, \sigma_z^{(S)} \otimes \sigma_z^{(E)} ,
+\label{eq:H_ZZ}
+\end{equation}
+so that the joint unitary for interaction time $t$ is
+\begin{equation}
+U(t) \;=\; \exp\!\big(-\tfrac{i}{\hbar} H_{SE} t\big)
+\;=\; \exp\!\big(- i \phi\, \sigma_z^{(S)} \otimes \sigma_z^{(E)}\big),
+\qquad \phi := g t .
+\label{eq:U_ZZ}
+\end{equation}
+
+\paragraph{Operational frame.}
+Fix an operational frame $F_S$ in which only measurements and controls on $S$ are
+available at the conditioning boundary $B$ (the environment $E$ is not accessible
+there). In this frame, two global preparations are \emph{operationally
+indistinguishable at $B$} iff they induce the same reduced state $\rho_S(B)$ and
+no available boundary procedure can discriminate them.
+
+\paragraph{Two admissible histories with identical boundary state.}
+Initialize at $t_0$ in the product state
+\[
+\ket{\psi_0} \;=\; \ket{+}_S \otimes \ket{+}_E,
+\qquad
+\ket{+} := \tfrac{1}{\sqrt{2}}(\ket{0}+\ket{1}).
+\]
+Define a first interaction segment of duration $t_\theta$ with $\theta := g t_\theta$.
+
+\begin{enumerate}
+\item \textbf{History $H_A$ (no intermediate environment relabeling).}
+Evolve under \eqref{eq:U_ZZ} for time $t_\theta$:
+\[
+\ket{\psi_A(B)} \;=\; U(t_\theta)\,\ket{\psi_0}.
+\]
+
+\item \textbf{History $H_B$ (environment relabeling within the inaccessible sector).}
+Evolve identically for time $t_\theta$, then apply a local unitary on $E$,
+\[
+\ket{\psi_B(B)} \;=\; (\mathbb{I}_S \otimes \sigma_x^{(E)})\,U(t_\theta)\,\ket{\psi_0}.
+\]
+\end{enumerate}
+
+Because $\sigma_x^{(E)}$ acts only on $E$, it does not affect the reduced state of
+$S$ at the boundary:
+\begin{equation}
+\rho_S^{(A)}(B) \;=\; \mathrm{Tr}_E\!\big[\ket{\psi_A(B)}\!\bra{\psi_A(B)}\big]
+\;=\;
+\mathrm{Tr}_E\!\big[\ket{\psi_B(B)}\!\bra{\psi_B(B)}\big]
+\;=\; \rho_S^{(B)}(B).
+\label{eq:boundary_equal}
+\end{equation}
+A direct calculation gives
+\begin{equation}
+\rho_S(B)
+\;=\;
+\tfrac{1}{2}\Big(\mathbb{I} + \cos(2\theta)\,\sigma_x^{(S)}\Big),
+\label{eq:rhoS_boundary}
+\end{equation}
+so the boundary state is mixed for generic $\theta$ and is \emph{identical} for
+$H_A$ and $H_B$ within frame $F_S$.
+
+\paragraph{Identical post-boundary evolution, distinct diagnostics.}
+Now apply the \emph{same} post-boundary evolution block $C$ to both arms: evolve
+under the same Hamiltonian \eqref{eq:H_ZZ} for time $t_\phi$ (with $\phi := g t_\phi$),
+\[
+\ket{\psi_{A,2}} \;=\; U(t_\phi)\,\ket{\psi_A(B)}, \qquad
+\ket{\psi_{B,2}} \;=\; U(t_\phi)\,\ket{\psi_B(B)}.
+\]
+Let the diagnostic observable be the $X$-visibility on $S$,
+\[
+D(\phi) := \langle \sigma_x^{(S)} \rangle .
+\]
+Then one finds
+\begin{equation}
+D_A(\phi) \;=\; \cos\!\big(2(\theta+\phi)\big),
+\qquad
+D_B(\phi) \;=\; \cos\!\big(2(\phi-\theta)\big).
+\label{eq:diagnostic_divergence}
+\end{equation}
+In particular, for generic $(\theta,\phi)$,
+\[
+D_A(\phi) \neq D_B(\phi)
+\quad\text{even though}\quad
+\rho_S^{(A)}(B)=\rho_S^{(B)}(B).
+\]
+Thus, within the operational frame $F_S$ (where only $\rho_S(B)$ is verified at
+the boundary), \emph{operationally indistinguishable boundary states admit
+distinct future extensions} under identical post-boundary evolution.
+
+\paragraph{Symmetry group and the meaning of ``symmetry breaking.''}
+In frame $F_S$, local unitaries on $E$ at the boundary are operationally
+undetectable from $S$ alone and therefore generate an admissible-history
+indistinguishability:
+\[
+G := \{ \mathbb{I}_S \otimes V_E \;|\; V_E \in \mathrm{U}(2) \}.
+\]
+By construction, $G$ acts trivially on the reduced boundary state, but can act
+nontrivially on admissible continuations because $E$ participates in the fixed
+post-boundary dynamics. Any state-augmentation of $S$ that distinguishes $H_A$
+from $H_B$ at $B$ must encode which $V_E$ occurred, but that information is
+\emph{not verifiable within $F_S$}. In the sense of
+Definition~\ref{def:faithful-state-representation}, such an augmentation is
+unfaithful relative to $F_S$: it distinguishes preparations that are
+operationally indistinguishable under all measurements available at the boundary.
+
+\paragraph{Interpretation.}
+This example is fully compatible with global unitary quantum mechanics: the two
+histories correspond to different global states on $SE$, hence different reduced
+future behavior when $S$ remains coupled to $E$. The point of $\Sigma_2$ is
+classificatory: within a fixed reduced operational frame, admissibility does not
+factorize through the reduced state, and any attempt to restore sufficiency by
+state enlargement requires representational enlargement beyond the frame (i.e.,
+introducing variables that cannot be independently verified without accessing $E$).
+
+The complete density-matrix derivations, explicit verification of $G$-equivalence, and the
+demonstration that any state augmentation distinguishing $H_A$ from $H_B$ necessarily violates
+operationally verified indistinguishability are given in Appendix~\ref{app:hamiltonian-derivation},
+Sec.~\ref{subsec:symmetry-group}.
+
+\subsection{Implications}
+
+Proposition~\ref{prop:first-order-insufficiency} does not assert that first-order
+descriptions are incorrect, nor that they fail empirically in all domains. It
+establishes a boundary: there exist classes of constraints for which state-based
+descriptions are formally incapable of expressing admissibility without structural
+distortion.
+
+This boundary motivates the introduction of a higher-order descriptive layer in
+which constraints act directly on admissible histories rather than on instantaneous
+states. The next section formalizes such a layer.
+
+\section{\texorpdfstring{Second-Order Constraint Geometry ($\Sigma_2$)}{Second-Order Constraint Geometry (Sigma2)}}
+\label{sec:definition-sigma2}
+
+The limitations identified in
+Sec.~\ref{sec:first-order-limits} point to a missing representational layer. When
+admissibility depends on ordered history rather than instantaneous configuration,
+constraints cannot be expressed faithfully within a state-based geometry. What is
+required is not new dynamics, but a language in which such constraints can be stated
+directly.
+
+Second-order constraint geometry provides this language. 
+
+Here “geometry” is used in the structural sense of the Erlangen program: $\Sigma_2$
+classifies admissible-history structure by the invariants and equivalence relations
+induced under symmetry actions and operational projections, without presupposing a
+metric or manifold structure.
+
+\subsection{Admissible-history space}
+
+Let $\mathcal{H}$ denote the space of admissible histories of a system. Elements
+$h \in \mathcal{H}$ are ordered sequences (or continuous curves) of states consistent
+with the system’s underlying laws or constraints. No privileged parametrization,
+orientation, or temporal direction is assumed at this level. Admissibility is
+defined prior to any projection onto a reduced description.
+
+\subsection{Second-order constraints}
+
+A \emph{second-order constraint} is a restriction on $\mathcal{H}$ that cannot be
+factorized into constraints on instantaneous states alone.
+
+\begin{definition}[Second-order constraint]
+A constraint $C$ is second-order if it is a predicate
+\[
+C : \mathcal{H} \to \{0,1\}
+\]
+such that there exists no function $c : \mathcal{S} \to \{0,1\}$ satisfying
+\[
+C(h) = \prod_{t} c(s_t)
+\quad \text{(or any equivalent pointwise factorization)}
+\]
+for all histories $h = \{s_t\}$ in $\mathcal{H}$.
+\end{definition}
+
+Equivalently, a second-order constraint depends on relational properties between
+distinct segments of a history rather than on instantaneous values.
+
+\subsection{Second-order constraint geometry}
+
+We define $\Sigma_2$ as the geometric structure induced by second-order constraints
+on $\mathcal{H}$.
+
+\begin{definition}[Second-order constraint geometry ($\Sigma_2$)]
+The second-order constraint geometry $\Sigma_2$ is the space of admissible histories
+$\mathcal{H}$ equipped with equivalence relations, exclusions, or admissibility
+conditions defined directly on histories rather than on states.
+\end{definition}
+
+Geometrically, $\Sigma_2$ organizes $\mathcal{H}$ into regions, classes, or
+topological sectors determined by admissibility relations that are invisible at the
+level of instantaneous state descriptions.
+
+\subsection{Relation to first-order dynamics}
+
+$\Sigma_2$ does not replace first-order dynamics. Instead, it acts as a constraint
+layer that restricts which histories generated by first-order laws are admissible.
+A system may therefore satisfy first-order dynamical laws on $\mathcal{S}$ together
+with second-order admissibility constraints on $\mathcal{H}$ without contradiction.
+
+The distinction is not between dynamics and non-dynamics, but between constraints
+acting on states and constraints acting on histories.
+
+\subsection{Non-representability as state variables}
+
+Second-order constraints generally cannot be represented as additional state
+variables without introducing asymmetry or violating invariances of the admissible
+history space. Any attempt to encode such a constraint as an instantaneous variable
+requires selecting a representative from a class of histories, thereby importing
+ordering or boundary information not intrinsic to $\mathcal{H}$. This is precisely
+the failure mode identified in
+Proposition~\ref{prop:first-order-insufficiency}.
+
+\subsection{Scope and intent}
+
+At this stage, $\Sigma_2$ is introduced as a formal extension rather than as a
+physical hypothesis. No claim is made that a given physical system requires
+second-order constraints, nor that such constraints generate novel dynamics. The claim is instead that when state sufficiency fails under symmetry-preserving representations, second-order constraints provide the minimal faithful description.
+
+The purpose of $\Sigma_2$ is to provide a mathematically explicit language for
+expressing admissibility structures that are otherwise forced into state-based
+descriptions via implicit asymmetries, boundary selections, or hidden bookkeeping.
+Subsequent sections will examine when and how such constraints become
+operationally detectable.
+

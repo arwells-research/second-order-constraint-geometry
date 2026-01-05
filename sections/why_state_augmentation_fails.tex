@@ -1,0 +1,146 @@
+\section{Why State Augmentation Does Not Restore Faithful Sufficiency}
+\label{sec:why-state-augmentation-fails}
+
+When empirical failures of state sufficiency are encountered, a standard response
+is to enlarge the state description. Additional variables, hidden degrees of
+freedom, memory registers, or extended ontologies are introduced with the aim of
+restoring a first-order, state-based representation. The failure of state sufficiency discussed here is not a critique of standard open-system practice, but a classification of the representational regime in which such practice operates once reduced descriptions cease to be closed. In many cases, such
+augmentations succeed in recovering predictive completeness.
+
+The question addressed here is narrower and structural: whether such augmentations
+can restore \emph{faithful} state sufficiency in the sense of
+Definition~\ref{def:faithful-state-representation}. We argue that, when admissible
+evolution depends irreducibly on ordered history, state augmentation may restore
+prediction but cannot restore faithful representation. Trajectory dependence is
+not eliminated; it is relocated.
+
+Throughout this section, ``faithful'' is understood \emph{relative to a fixed
+operational frame} (Sec.~\ref{sec:first-order-limits}): symmetries of the
+admissible-history space are taken to represent experimentally verified
+indistinguishabilities within that frame, and ``augmentation'' is counted as a
+restoration of state sufficiency only when the added variables are independently
+verifiable without leaving the frame.
+
+\subsection{Predictive completeness versus representational faithfulness}
+
+A state-based description is predictively complete if the augmented state suffices
+to determine future statistics and admissible operations. Faithful sufficiency is
+stronger: it requires that admissibility factor through state without breaking the
+symmetry structure of the admissible-history space or introducing privileged
+boundaries or orderings.
+
+Once the ordering of prior transformations continues to constrain admissible
+futures after the state is fixed, any augmentation that restores prediction must
+encode that ordering explicitly or implicitly. The issue is therefore not whether
+augmentation can succeed operationally, but whether it does so \emph{faithfully}.
+
+\subsection{Hidden-variable extensions}
+
+Hidden-variable theories illustrate the distinction clearly. If the additional
+variables encode only instantaneous properties, ordering-sensitive admissibility
+persists and sufficiency is not restored. If they encode sufficient historical
+information to recover admissibility, the representation ceases to be faithful:
+histories equivalent under the symmetries of $\mathcal{H}$ are mapped to distinct
+augmented states.
+
+In this case, predictive completeness is achieved only by breaking admissible-history
+equivalence. The augmented state functions as a surrogate encoding of trajectory
+classes rather than as a faithful instantaneous description.
+
+\subsection{Memory variables and non-Markovian states}
+
+A closely related strategy treats history dependence as a failure of Markovianity
+and attempts to restore closure by introducing memory variables. While this move
+often recovers predictive accuracy, it does so by explicitly embedding trajectory
+information into the instantaneous description.
+
+This is not a restoration of state sufficiency, but a relocation of the constraint.
+The resulting object labeled as a ``state'' no longer represents a configuration
+at an instant, but an equivalence class of histories summarized by a bookkeeping
+variable. Calling such an object a state obscures the structural reality: admissibility
+is determined by the path, not the point.
+
+From the present perspective, non-Markovian state spaces are surrogate encodings of
+trajectory-level constraints. They succeed computationally by forcing a history-based
+process into a state-based form, but they do not eliminate second-order structure;
+they conceal it.
+
+Equivalently: when a ``memory kernel'' succeeds, it does so by importing
+trajectory-level structure into an enlarged instantaneous description. $\Sigma_2$
+does not deny the dynamical correctness of such models; it isolates when their
+success depends on representational enlargement beyond the reduced frame.
+
+\subsection{Extended Hilbert spaces and purification}
+
+In quantum theory, mixed states are often purified by embedding the system into a
+larger Hilbert space. At the global level, this restores unitary evolution. However,
+it does not restore faithful state sufficiency at the operational level.
+
+Reduced states remain insufficient to determine admissible continuations without
+reference to preparation or selection history, and operational access to the
+purifying degrees of freedom is typically restricted. As a result, purification
+relocates admissibility constraints to an enlarged space without eliminating their
+dependence on history or boundary conditions.
+
+\subsection{Retrocausal and time-symmetric state assignments}
+
+Retrocausal and time-symmetric formulations pursue predictive completeness by
+allowing future boundary conditions to influence present state descriptions. While
+such approaches may succeed operationally, they do so by abandoning local
+state-based sufficiency altogether.
+
+In terms of Definition~\ref{def:faithful-state-representation}, these formulations
+encode admissibility constraints across entire histories rather than restoring a
+faithful instantaneous representation. They are trajectory-based in substance,
+even when expressed in state language.
+
+\subsection{Why augmentation cannot be faithful in general}
+
+All state-augmentation strategies share a common feature: they are justified solely by observed ordering dependence.
+However, if admissibility depends on history relations invariant under the symmetries of $\mathcal{H}$ (i.e., relations preserved under experimentally verified indistinguishabilities), any state-based encoding that restores prediction effectively distinguishes between symmetry-equivalent histories. This conclusion holds for any finite or
+countably infinite state augmentation,
+provided the augmentation preserves the symmetry structure of the admissible-history
+space rather than selecting privileged representatives.
+
+This violates faithfulness. The augmentation succeeds operationally only by
+introducing representational asymmetry, privileged boundaries, or explicit history
+bookkeeping not present in the underlying admissible-history structure.
+
+\subsection{Structural, not empirical, limitation}
+
+The failure of faithful state augmentation is therefore structural rather than
+empirical. It does not depend on experimental noise, incomplete control, or
+approximation. Whenever admissibility depends irreducibly on ordered history, no state-based representation can be both predictively sufficient and faithful. This limitation is conditional rather than universal: it applies precisely in
+regimes where admissibility relations are invariant under the symmetries of the
+admissible-history space and cannot be factored through instantaneous state alone.
+
+This result does not prohibit state augmentation, nor does it deny its practical
+utility. It establishes a boundary: beyond a certain class of constraints,
+augmentation restores prediction only by abandoning faithful representation.
+
+\subsection{Relation to foundational no-go results}
+
+This limitation parallels other foundational no-go statements. Just as no local
+hidden-variable theory can faithfully reproduce quantum correlations, and no
+noncontextual value assignment can faithfully represent measurement outcomes, so
+no state-based augmentation can universally and faithfully restore sufficiency
+across all admissible-history structures once admissibility depends on history.
+
+Second-order constraint geometry makes this limitation explicit. It supplements
+progressively more elaborate surrogate encodings with a minimal language in which
+trajectory-dependent admissibility is represented directly rather than displaced.
+
+Nothing in the present framework denies that state augmentation may succeed in restoring faithful sufficiency in many physical systems. In such cases, second-order constraint geometry adds no explanatory content and should not be invoked. The role of $\Sigma_2$ is strictly diagnostic: it becomes relevant only when predictive completeness is achieved at the cost of representational faithfulness.
+
+\paragraph{Relation to non-Markovian descriptions.}
+A standard response to history-dependent behavior is to embed the system into a
+larger state space—typically by including environmental degrees of freedom—thereby
+restoring Markovian evolution at the cost of state enlargement. Second-order
+constraint geometry ($\Sigma_2$) does not deny the dynamical
+correctness of this move, nor its predictive success. Instead, it diagnoses its representational cost.
+
+Such embeddings succeed by relocating history dependence into an expanded instantaneous description. The crucial cost of this move is structural: the expanded description breaks the symmetries of the original operational frame.
+
+By distinguishing between histories that are operationally indistinguishable at the conditioning boundary, the embedding introduces specific ordering or boundary information that is extrinsic to the reduced description. This diagnosis applies even when the added degrees of freedom are physically real. While ontologically valid in a global context, their inclusion alters the symmetry structure of the reduced theory by postulating distinctions that are not independently verifiable within the frame in which the reduced state is defined.
+
+From the perspective of Definition~\ref{def:faithful-state-representation}, the result is therefore an unfaithful representation: predictive completeness is restored only by abandoning symmetry preservation. $\Sigma_2$ does not compete with non-Markovian models; it explains precisely when and why their success depends on symmetry-breaking augmentation rather than on genuinely state-local structure.

@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, calc}
+\usepackage{enumitem} 
+
+\geometry{margin=1in}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\title{Second-Order Constraint Geometry}
+\author{A. R. Wells \\ Dual-Frame Research Group}
+\date{\today}
+
+% --- Dirac notation (minimal, no extra package dependency) ---
+\newcommand{\ket}[1]{\left|#1\right\rangle}
+\newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\braket}[2]{\left\langle#1\,\middle|\,#2\right\rangle}
+\newcommand{\ketbra}[2]{\left|#1\right\rangle\!\left\langle#2\right|}
+
+% (Optional helpers if you use them elsewhere)
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\I}{\mathbb{I}}
+
+\begin{document}
+\maketitle
+
+% --- Front matter ---
+\input{sections/abstract}
+\input{sections/introduction}
+
+% --- Motivation: limits of state-based descriptions ---
+\input{sections/limits_of_state_sufficiency}
+\input{sections/first_order_limits}
+
+% --- Definition and diagnostics of Σ₂ ---
+\input{sections/diagnostics_sigma2}
+\input{sections/toy_examples_sigma2}
+
+% --- Testable predictions ---
+\input{sections/empirical_signatures_and_testable_diagnostics_sigma2}
+\input{sections/empirical_protocol_sigma2}
+\input{sections/falsifiability_sigma2}
+
+% --- Case studies ---
+\input{sections/case_study_measurement_or_postselection}
+\input{sections/case_study_decoherence_and_environment}
+\input{sections/empirical_case_studies_sigma2}
+
+% --- Relations and implications ---
+\input{sections/relation_to_projection_induced_arrows}
+\input{sections/comparison_with_quantum_formalism}
+\input{sections/why_state_augmentation_fails}
+\input{sections/why_quantum_mechanics_is_not_wrong_but_incomplete}
+\input{sections/implications_for_quantum_measurement}
+\input{sections/implications_for_foundations_and_no_go_theorems}
+
+% --- Closing ---
+\input{sections/conclusion}
+
+\input{sections/appendix_comparison_frameworks}
+\input{sections/appendix_hamiltonian_derivation}
+
+\bibliographystyle{plain}
+\bibliography{bib/references}
+
+\end{document}

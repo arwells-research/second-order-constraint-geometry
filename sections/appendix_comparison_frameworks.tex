@@ -1,0 +1,77 @@
+\appendix
+\section{Comparison with Related Frameworks}
+\label{app:comparison-frameworks}
+
+This appendix situates second-order constraint geometry ($\Sigma_2$) relative to existing formalisms in quantum foundations and open-system theory. The intent is not to claim priority or replacement, but to clarify the \emph{distinct role} played by $\Sigma_2$ as a diagnostic and classificatory layer.
+
+Many established frameworks successfully model dynamics, probabilities, or causal structure. $\Sigma_2$ addresses a different question: \emph{when does a reduced, state-based description fail to faithfully represent admissibility without symmetry-breaking augmentation?}
+
+Table~\ref{tab:comparison-frameworks} summarizes these relationships.
+
+\begin{table}[htbp]
+    \centering
+    \small % Slightly reduces font size for better fit
+    \renewcommand{\arraystretch}{1.4} % Adds breathing room between rows
+    \caption{Comparison of $\Sigma_2$ with Related Frameworks}
+    \label{tab:comparison-frameworks}
+    
+    % X columns automatically calculate width. 
+    % >{\raggedright\arraybackslash} ensures text is left-aligned (not justified).
+    \begin{tabularx}{\textwidth}{@{} >{\raggedright\arraybackslash}p{2.8cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X @{}} 
+    \toprule
+    \textbf{Framework} &
+    \textbf{Primary Object} &
+    \textbf{Sufficiency Criterion} &
+    \textbf{Relation to $\Sigma_2$} \\
+    \midrule
+    
+    Standard Quantum Mechanics &
+    Instantaneous state $\rho(t)$ &
+    \emph{Predictive} sufficiency: $\rho(t)$ fixes future statistics &
+    $\Sigma_2$ does not challenge dynamical correctness; it diagnoses when predictive sufficiency fails to imply \emph{admissibility} sufficiency. \\
+    
+    Non-Markovian Dynamics &
+    Augmented state or memory kernel &
+    Restored Markovian closure via state enlargement &
+    $\Sigma_2$ classifies when such augmentation restores prediction only by breaking admissible-history symmetries. \\
+    
+    Consistent Histories &
+    Sets of histories $\{h\}$ with decoherence functional &
+    Consistency of probability assignments over histories &
+    Complementary: CH addresses probabilistic consistency; $\Sigma_2$ addresses representational sufficiency of reduced descriptions. \\
+    
+    Path Integral Formulation &
+    Sum over trajectories &
+    Global amplitude assignment &
+    $\Sigma_2$ constrains admissibility of trajectories rather than computing amplitudes. No conflict with path-integral methods. \\
+    
+    Process Matrices / Quantum Combs &
+    Higher-order maps on operations &
+    Causal or operational consistency &
+    $\Sigma_2$ is agnostic to causal ordering; it diagnoses failures of state-based sufficiency independently of causal structure. \\
+    
+    Causal Sets &
+    Primitive causal relations &
+    Causal consistency &
+    Orthogonal: $\Sigma_2$ does not posit causal structure as fundamental, but constrains admissibility given fixed dynamics. \\
+    
+    Thermal Time Hypothesis &
+    State-dependent notion of time &
+    Thermodynamic consistency &
+    Compatible: $\Sigma_2$ constrains admissible histories prior to time parametrization. \\
+    \midrule
+    
+    \textbf{$\Sigma_2$ (This Work)} &
+    \textbf{Admissible histories $\mathcal{H}$} &
+    \textbf{\emph{Faithful} sufficiency:} factors through state without symmetry breaking &
+    \textbf{Diagnostic and classificatory layer identifying structural limits of state-based descriptions.} \\
+    
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+\paragraph{Interpretive neutrality.}
+The classifications in Table~\ref{tab:comparison-frameworks} are intentionally interpretation-agnostic. Whether one adopts Everettian, consistent-histories, operational, or pragmatic open-systems viewpoints, the $\Sigma_2$ diagnostic applies whenever a reduced description is employed and admissibility depends on trajectory structure not factorizable through instantaneous state.
+
+\paragraph{Scope.}
+Nothing in this comparison asserts that $\Sigma_2$ is universally required. Closed systems, Markovian open systems, and many coarse-grained models remain faithfully state-sufficient. $\Sigma_2$ becomes relevant precisely when predictive completeness is achieved only by representational augmentation that breaks verified admissible-history symmetries.

@@ -1,0 +1,109 @@
+\begin{figure}[htbp]
+\centering
+\begin{tcolorbox}[
+    colback=white,
+    colframe=black,
+    arc=0pt,
+    boxrule=0.8pt,
+    title=\textbf{Box X: Experimental Protocol for Testing Second-Order (\texorpdfstring{$\Sigma_2$}{Sigma2}) Trajectory Dependence},
+    fonttitle=\bfseries\normalsize, % Slightly larger title
+    coltitle=white,
+    left=6pt, right=6pt, top=4pt, bottom=4pt
+]
+\small % Keeps text compact
+\setlength{\parskip}{0.3em} % Tighter paragraph spacing
+
+\textbf{Objective.}
+Determine whether admissible histories that yield the \emph{same verified reduced state at a conditioning boundary} can nevertheless produce \emph{distinct future diagnostic behavior} under identical subsequent evolution.
+
+\textbf{Protocol overview.}
+Two distinct admissible control histories, $H_A$ and $H_B$, are constructed on the same physical system. The histories are chosen such that their net effect at a designated conditioning boundary $B$ is identical—e.g.\ both implement the identity unitary—while differing in internal ordering or trajectory structure.
+
+At the boundary $B$, an identical reset or conditioning operation is applied in both arms, defining an operational cut. By construction, no information about the prior history is retained at the level of the reduced description. Reduced-state tomography is then performed at $B$, and only runs satisfying
+$\rho_B^{(A)} \approx \rho_B^{(B)}$
+within a pre-registered tolerance are accepted.
+
+\emph{Clarification.}
+The protocol does not assume that all physically relevant distinctions are detectable at the conditioning boundary by any finite tomography. Rather, it tests whether operationally indistinguishable boundary states admit distinct future extensions under identical post-boundary evolution. This separation between boundary indistinguishability and future admissibility is precisely the diagnostic signature of second-order constraint structure.
+
+Following boundary verification, the \emph{same} post-boundary evolution block $C$ is applied to both preparations—such as a Ramsey, echo, or probe sequence with a variable delay parameter $\tau$. A reduced diagnostic observable $D$ (e.g.\ visibility, phase drift, or decoherence envelope) is measured, yielding diagnostic statistics $D_A(\tau)$ and $D_B(\tau)$.
+
+\vspace{0.2em}
+\textbf{Schematic.}
+\begin{center}
+\begin{tikzpicture}[
+    node distance=1.0cm and 0.4cm,
+    box/.style={draw, rectangle, minimum height=0.55cm, font=\scriptsize, align=center},
+    arrow/.style={-Latex, thick}
+]
+    % Top Row (History A)
+    \node[box] (prepA) {Prep $H_A$};
+    \node[box, right=0.5cm of prepA] (boundA) {Boundary $B$\\$\rho_S^{(A)}$};
+    \node[box, right=0.5cm of boundA] (evolA) {Evolution $C$\\(Ramsey/Echo)};
+    \node[right=0.5cm of evolA, font=\scriptsize] (resA) {$D_A(\tau)$};
+
+    % Bottom Row (History B)
+    \node[box, below=0.5cm of prepA] (prepB) {Prep $H_B$};
+    \node[box, right=0.5cm of prepB] (boundB) {Boundary $B$\\$\rho_S^{(B)}$};
+    \node[box, right=0.5cm of boundB] (evolB) {Evolution $C$\\(Ramsey/Echo)};
+    \node[right=0.5cm of evolB, font=\scriptsize] (resB) {$D_B(\tau)$};
+
+    % Arrows
+    \draw[arrow] (prepA) -- (boundA);
+    \draw[arrow] (boundA) -- (evolA);
+    \draw[arrow] (evolA) -- (resA);
+
+    \draw[arrow] (prepB) -- (boundB);
+    \draw[arrow] (boundB) -- (evolB);
+    \draw[arrow] (evolB) -- (resB);
+
+    % Comparisons
+    \draw[<->, dashed, thick] (boundA) -- node[fill=white, inner sep=1pt, font=\tiny] {$\Delta \rho \le \varepsilon$} (boundB);
+    \draw[<->, dashed, thick] (resA) -- node[fill=white, inner sep=1pt, font=\tiny] {$\Delta D \neq 0$} (resB);
+\end{tikzpicture}
+\end{center}
+\vspace{-0.5em}
+
+\textbf{Null prediction (faithful state sufficiency).}
+Assume that the reduced description at the conditioning boundary admits a \emph{faithful state representation} (Definition~\ref{def:faithful-state-representation}), such that admissible future evolution depends only on the boundary state and preserves admissible-history equivalence under all symmetry transformations that leave the reduced state invariant. Under this assumption, identical boundary states within the verified tolerance imply identical diagnostic behavior:
+\[
+D_A(\tau) = D_B(\tau) \quad \forall\, \tau .
+\]
+
+\textbf{Second-order prediction.}
+If trajectory-level (second-order) constraints are physically relevant, then distinct admissible histories satisfying $\rho_B^{(A)} = \rho_B^{(B)}$ may nevertheless yield:
+\[
+D_A(\tau) \neq D_B(\tau).
+\]
+
+\textbf{Interpretation.}
+A reproducible violation of the null prediction constitutes an operational failure of state sufficiency. Such a failure supports the presence of $\Sigma_2$-level constraint structure acting on admissible histories that is not representable within the reduced state alone. This result does not contradict the existence of global system--environment descriptions that restore Markovianity; it identifies the point at which such descriptions require representational enlargement beyond the reduced frame.
+
+\end{tcolorbox}
+\end{figure}
+
+\paragraph{Null hypothesis (faithful state sufficiency).}
+The null hypothesis tested by the protocol in Box~X assumes that the reduced
+description at the conditioning boundary admits a \emph{faithful state
+representation} in the sense of
+Definition~\ref{def:faithful-state-representation}. Under this assumption,
+admissible future evolution depends only on the boundary state and preserves
+admissible-history equivalence under all symmetry transformations that leave the
+reduced state invariant. Under faithful state sufficiency, identical verified
+boundary states therefore imply identical diagnostic behavior for all subsequent
+evolution.
+
+\paragraph{Practical considerations.}
+Implementing the protocol in Box~X requires careful control of boundary
+verification and environmental coupling. Reduced-state tomography at the
+conditioning boundary establishes operational indistinguishability at the level
+of the verified description; it is not assumed to exhaust all global degrees of
+freedom or correlations. The diagnostic tests whether such operationally
+indistinguishable boundary states nevertheless admit distinct future extensions
+under identical post-boundary evolution.
+
+Persistent correlations established during the preparation histories
+$H_A$ and $H_B$ constitute the signal of interest, as they encode admissible-history
+structure beyond the reduced description. By contrast, deviations attributable
+solely to active noise, experimental drift, or calibration error during the
+post-boundary evolution must be excluded by independent controls.

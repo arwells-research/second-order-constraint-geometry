@@ -1,0 +1,365 @@
+\section{Derivation Details for the Concrete Hamiltonian Example}
+\label{app:hamiltonian-derivation}
+
+This appendix provides the explicit density-matrix and partial-trace derivations
+supporting Sec.~\ref{subsec:concrete-hamiltonian-example}.
+We show (i) equality of reduced boundary state under two admissible histories
+within the reduced operational frame, and (ii) divergence of a reduced diagnostic
+under identical post-boundary evolution.
+
+\subsection{Setup and notation}
+
+Let $S$ and $E$ be qubits with computational basis $\{\ket{0},\ket{1}\}$.
+Define $\ket{+} := (\ket{0}+\ket{1})/\sqrt{2}$.
+Let
+\begin{equation}
+H_{SE}=\hbar g\,\sigma_z^{(S)}\otimes \sigma_z^{(E)}, \qquad
+U(t)=e^{-\frac{i}{\hbar}H_{SE}t}=e^{-i\phi\,\sigma_z^{(S)}\otimes\sigma_z^{(E)}},
+\qquad \phi:=gt.
+\end{equation}
+On the joint computational basis $\ket{ij}\equiv \ket{i}_S\ket{j}_E$,
+$\sigma_z^{(S)}\otimes\sigma_z^{(E)}$ has eigenvalue $+1$ on $\ket{00},\ket{11}$ and
+$-1$ on $\ket{01},\ket{10}$, hence
+\begin{equation}
+U(\phi)\ket{00}=e^{-i\phi}\ket{00},\;
+U(\phi)\ket{01}=e^{+i\phi}\ket{01},\;
+U(\phi)\ket{10}=e^{+i\phi}\ket{10},\;
+U(\phi)\ket{11}=e^{-i\phi}\ket{11}.
+\label{eq:Uphi_action}
+\end{equation}
+
+We take the initial product state
+\begin{equation}
+\ket{\psi_0}=\ket{+}_S\otimes\ket{+}_E
+=\tfrac{1}{2}\big(\ket{00}+\ket{01}+\ket{10}+\ket{11}\big).
+\label{eq:psi0}
+\end{equation}
+
+Write the first interaction duration as $t_\theta$ with $\theta:=gt_\theta$,
+and the post-boundary block duration as $t_\phi$ with $\phi:=gt_\phi$.
+
+\subsection{Boundary states for the two histories}
+
+\paragraph{History $H_A$.}
+After the first interaction segment,
+\begin{align}
+\ket{\psi_A(B)} &= U(\theta)\ket{\psi_0}
+\nonumber\\
+&=\tfrac{1}{2}\Big(e^{-i\theta}\ket{00}+e^{+i\theta}\ket{01}+e^{+i\theta}\ket{10}+e^{-i\theta}\ket{11}\Big).
+\label{eq:psiA_B}
+\end{align}
+
+\paragraph{History $H_B$.}
+Apply $(\mathbb{I}_S\otimes\sigma_x^{(E)})$ after the first interaction segment:
+since $\sigma_x\ket{0}=\ket{1}$ and $\sigma_x\ket{1}=\ket{0}$,
+\begin{align}
+\ket{\psi_B(B)} &=
+(\mathbb{I}_S\otimes\sigma_x^{(E)})\,\ket{\psi_A(B)}
+\nonumber\\
+&=\tfrac{1}{2}\Big(e^{-i\theta}\ket{01}+e^{+i\theta}\ket{00}+e^{+i\theta}\ket{11}+e^{-i\theta}\ket{10}\Big)
+\nonumber\\
+&=\tfrac{1}{2}\Big(e^{+i\theta}\ket{00}+e^{-i\theta}\ket{01}+e^{-i\theta}\ket{10}+e^{+i\theta}\ket{11}\Big).
+\label{eq:psiB_B}
+\end{align}
+
+\subsection{Reduced boundary density matrix $\rho_S(B)$}
+
+Define $\rho_{SE}^{(A)}(B)=\ket{\psi_A(B)}\!\bra{\psi_A(B)}$ and
+$\rho_{SE}^{(B)}(B)=\ket{\psi_B(B)}\!\bra{\psi_B(B)}$.
+We compute $\rho_S^{(A)}(B)=\mathrm{Tr}_E[\rho_{SE}^{(A)}(B)]$ explicitly; the same
+result holds for $H_B$ either by direct repetition or by the general invariance
+$\mathrm{Tr}_E[(\mathbb{I}\otimes V)\rho(\mathbb{I}\otimes V^\dagger)]
+=\mathrm{Tr}_E[\rho]$.
+
+Write $\ket{\psi_A(B)}$ in Schmidt-like grouped form by environment basis:
+\begin{equation}
+\ket{\psi_A(B)}=
+\ket{0}_E\otimes \ket{v_0}_S+\ket{1}_E\otimes \ket{v_1}_S,
+\end{equation}
+where (reading off coefficients from \eqref{eq:psiA_B})
+\begin{equation}
+\ket{v_0}_S=\tfrac{1}{2}\big(e^{-i\theta}\ket{0}+e^{+i\theta}\ket{1}\big),
+\qquad
+\ket{v_1}_S=\tfrac{1}{2}\big(e^{+i\theta}\ket{0}+e^{-i\theta}\ket{1}\big).
+\label{eq:v0v1}
+\end{equation}
+Then
+\begin{equation}
+\rho_S^{(A)}(B)=\mathrm{Tr}_E\!\big[\ket{\psi_A(B)}\!\bra{\psi_A(B)}\big]
+=\ket{v_0}\!\bra{v_0}+\ket{v_1}\!\bra{v_1}.
+\label{eq:rhoS_sum}
+\end{equation}
+Compute each term using \eqref{eq:v0v1}:
+\begin{align}
+\ket{v_0}\!\bra{v_0}
+&=\tfrac{1}{4}\Big(\ket{0}\!\bra{0}+\ket{1}\!\bra{1}
++e^{-i2\theta}\ket{0}\!\bra{1}+e^{+i2\theta}\ket{1}\!\bra{0}\Big),
+\\
+\ket{v_1}\!\bra{v_1}
+&=\tfrac{1}{4}\Big(\ket{0}\!\bra{0}+\ket{1}\!\bra{1}
++e^{+i2\theta}\ket{0}\!\bra{1}+e^{-i2\theta}\ket{1}\!\bra{0}\Big).
+\end{align}
+Summing,
+\begin{align}
+\rho_S^{(A)}(B)
+&=\tfrac{1}{2}\Big(\ket{0}\!\bra{0}+\ket{1}\!\bra{1}\Big)
++\tfrac{1}{4}\Big((e^{-i2\theta}+e^{+i2\theta})\ket{0}\!\bra{1}
++(e^{+i2\theta}+e^{-i2\theta})\ket{1}\!\bra{0}\Big)
+\nonumber\\
+&=\tfrac{1}{2}\mathbb{I}
++\tfrac{1}{2}\cos(2\theta)\Big(\ket{0}\!\bra{1}+\ket{1}\!\bra{0}\Big)
+\nonumber\\
+&=\tfrac{1}{2}\Big(\mathbb{I}+\cos(2\theta)\,\sigma_x^{(S)}\Big).
+\label{eq:rhoS_B_final}
+\end{align}
+As noted, $\rho_S^{(B)}(B)=\rho_S^{(A)}(B)$ by the invariance of the partial trace
+under local unitaries on $E$.
+
+\subsection{Post-boundary evolution and reduced diagnostic}
+
+Define the post-boundary evolution block as applying the \emph{same} unitary
+$U(\phi)$ to both arms:
+\begin{equation}
+\ket{\psi_{A,2}}=U(\phi)\ket{\psi_A(B)}, \qquad
+\ket{\psi_{B,2}}=U(\phi)\ket{\psi_B(B)}.
+\end{equation}
+
+\paragraph{Arm $A$.}
+Using \eqref{eq:psiA_B} and the action \eqref{eq:Uphi_action},
+\begin{align}
+\ket{\psi_{A,2}}
+&=\tfrac{1}{2}\Big(e^{-i(\theta+\phi)}\ket{00}+e^{+i(\theta+\phi)}\ket{01}
++e^{+i(\theta+\phi)}\ket{10}+e^{-i(\theta+\phi)}\ket{11}\Big)
+\nonumber\\
+&=U(\theta+\phi)\ket{\psi_0}.
+\label{eq:psiA2}
+\end{align}
+Therefore, by repeating the boundary calculation with $\theta\mapsto(\theta+\phi)$,
+the reduced state on $S$ satisfies
+\begin{equation}
+\rho_S^{(A)}(\phi)=\tfrac{1}{2}\Big(\mathbb{I}+\cos\big(2(\theta+\phi)\big)\sigma_x^{(S)}\Big),
+\end{equation}
+so the diagnostic $D(\phi):=\langle\sigma_x^{(S)}\rangle$ is
+\begin{equation}
+D_A(\phi)=\mathrm{Tr}\big(\rho_S^{(A)}(\phi)\sigma_x^{(S)}\big)=\cos\big(2(\theta+\phi)\big).
+\label{eq:DA_final}
+\end{equation}
+
+\paragraph{Arm $B$.}
+Start from \eqref{eq:psiB_B}, then apply $U(\phi)$:
+\begin{align}
+\ket{\psi_{B,2}}
+&=\tfrac{1}{2}\Big(e^{-i\phi}e^{+i\theta}\ket{00}+e^{+i\phi}e^{-i\theta}\ket{01}
++e^{+i\phi}e^{-i\theta}\ket{10}+e^{-i\phi}e^{+i\theta}\ket{11}\Big)
+\nonumber\\
+&=\tfrac{1}{2}\Big(e^{-i(\phi-\theta)}\ket{00}+e^{+i(\phi-\theta)}\ket{01}
++e^{+i(\phi-\theta)}\ket{10}+e^{-i(\phi-\theta)}\ket{11}\Big)
+\nonumber\\
+&=U(\phi-\theta)\ket{\psi_0}.
+\label{eq:psiB2}
+\end{align}
+Thus, again repeating the reduced-state calculation with angle $(\phi-\theta)$,
+\begin{equation}
+\rho_S^{(B)}(\phi)=\tfrac{1}{2}\Big(\mathbb{I}+\cos\big(2(\phi-\theta)\big)\sigma_x^{(S)}\Big),
+\end{equation}
+and
+\begin{equation}
+D_B(\phi)=\cos\big(2(\phi-\theta)\big).
+\label{eq:DB_final}
+\end{equation}
+
+\paragraph{Divergence under identical boundary state.}
+Equations \eqref{eq:rhoS_B_final}, \eqref{eq:DA_final}, and \eqref{eq:DB_final}
+show:
+\begin{itemize}
+\item At the conditioning boundary $B$, $\rho_S^{(A)}(B)=\rho_S^{(B)}(B)$ exactly.
+\item Under identical post-boundary evolution $U(\phi)$, the reduced diagnostics differ
+for generic $(\theta,\phi)$:
+\begin{equation}
+D_A(\phi)=\cos\big(2(\theta+\phi)\big)\neq \cos\big(2(\phi-\theta)\big)=D_B(\phi).
+\end{equation}
+\end{itemize}
+This is the explicit algebraic realization of the Box~X pattern:
+operationally indistinguishable boundary states admit distinct future extensions.
+
+\subsection{Partial-trace invariance under environment relabelings}
+
+For completeness, we record the general identity used above.
+For any operator $\rho_{SE}$ and any unitary $V_E$ on $E$,
+\begin{equation}
+\mathrm{Tr}_E\!\big[(\mathbb{I}_S\otimes V_E)\,\rho_{SE}\,(\mathbb{I}_S\otimes V_E^\dagger)\big]
+=\mathrm{Tr}_E[\rho_{SE}],
+\end{equation}
+because the partial trace over $E$ is basis-independent and conjugation by a local
+unitary on $E$ amounts to a change of basis on the traced subsystem.
+
+\subsection{Symmetry group $G$ and operational indistinguishability}
+\label{subsec:symmetry-group}
+
+We now make explicit the symmetry structure underlying the concrete example
+and show why any state augmentation that restores sufficiency necessarily
+breaks a physically meaningful symmetry.
+
+\paragraph{Operational frame.}
+Fix the operational frame $F_S$ in which, at the conditioning boundary $B$,
+only measurements and controls acting on the system $S$ are available.
+No measurements on the environment $E$, joint $SE$ observables, or records
+of intermediate operations are accessible in this frame.
+
+Within $F_S$, two preparations are operationally indistinguishable at $B$
+iff they induce identical reduced states $\rho_S(B)$ and yield identical
+statistics for all observables accessible in $F_S$.
+
+\paragraph{Definition of the symmetry group $G$.}
+Let $G$ denote the group of transformations acting on admissible histories
+that satisfy the following two conditions:
+\begin{enumerate}
+\item \textbf{State invariance:} For any $g\in G$ and any history $H$,
+the induced reduced boundary state is invariant,
+\[
+\rho_S(B; H) = \rho_S(B; g\cdot H).
+\]
+\item \textbf{Operational undetectability:}
+No measurement or control available in frame $F_S$ can detect whether $g$ has been applied.
+That is, for any observable $O_S$ accessible in $F_S$ and any history $H$,
+\[
+\langle O_S \rangle_{H}
+=
+\langle O_S \rangle_{g \cdot H}.
+\]
+\end{enumerate}
+
+In the present example, $G$ consists of all local unitaries acting on $E$
+at the boundary,
+\[
+G = \{\, \mathbb{I}_S \otimes V_E \mid V_E \in \mathrm{U}(2) \,\}.
+\]
+Each $g\in G$ acts nontrivially on admissible histories but trivially on
+the reduced boundary description in $F_S$.
+
+\paragraph{Relation between the histories $H_A$ and $H_B$.}
+The two histories introduced in
+Sec.~\ref{subsec:concrete-hamiltonian-example} are related by the action
+of a specific element of $G$:
+\begin{equation}
+H_B = (\mathbb{I}_S \otimes \sigma_x^{(E)}) \circ H_A .
+\end{equation}
+Explicitly,
+\begin{equation}
+\ket{\psi_B(B)} =
+(\mathbb{I}_S \otimes \sigma_x^{(E)}) \ket{\psi_A(B)},
+\end{equation}
+as shown in Eq.~\eqref{eq:psiB_B}.
+By invariance of the partial trace,
+\begin{equation}
+\rho_S^{(B)}(B)
+=
+\mathrm{Tr}_E\!\left[
+(\mathbb{I}_S \otimes \sigma_x^{(E)})
+\rho_{SE}^{(A)}(B)
+(\mathbb{I}_S \otimes \sigma_x^{(E)})^\dagger
+\right]
+=
+\rho_S^{(A)}(B),
+\end{equation}
+establishing that $H_A$ and $H_B$ are $G$-equivalent and
+indistinguishable at the boundary within $F_S$.
+
+\paragraph{Operational indistinguishability at the boundary.}
+Let $O_S$ be any observable acting on $S$ accessible in $F_S$.
+Then
+\begin{equation}
+\langle O_S \rangle_A
+=
+\mathrm{Tr}\!\left[\rho_S^{(A)}(B)\,O_S\right]
+=
+\mathrm{Tr}\!\left[\rho_S^{(B)}(B)\,O_S\right]
+=
+\langle O_S \rangle_B .
+\end{equation}
+Thus \emph{no measurement available in frame $F_S$ can distinguish}
+$H_A$ from $H_B$ at the conditioning boundary.
+The symmetry $G$ therefore corresponds to experimentally verified
+indistinguishability, not merely formal equivalence.
+
+\paragraph{Failure of faithful state augmentation.}
+Suppose one attempts to restore state sufficiency by augmenting the reduced
+state with an auxiliary variable $\lambda$ indicating which history occurred,
+\[
+\rho_S(B) \longmapsto (\rho_S(B), \lambda),
+\qquad \lambda \in \{A,B\}.
+\]
+This augmentation distinguishes
+\[
+(\rho_S(B), A) \neq (\rho_S(B), B),
+\]
+despite the fact that:
+\begin{enumerate}
+\item $H_A$ and $H_B$ are related by a $G$-transformation,
+\item all $G$-transformations are operationally undetectable in $F_S$,
+\item no boundary-accessible measurement can determine $\lambda$.
+\end{enumerate}
+
+The augmented variable $\lambda$ therefore encodes distinctions that have
+no operational support within the frame in which the reduced state is defined.
+In the sense of Definition~\ref{def:faithful-state-representation},
+this augmentation violates symmetry preservation and is unfaithful.
+
+The divergence of diagnostics despite boundary-state equality
+(Eqs.~\eqref{eq:diagnostic_divergence})
+then follows as an operational consequence: future behavior depends on information
+(the $G$-equivalence class of the history) that is not encoded in, and cannot be
+recovered from, the reduced state $\rho_S(B)$ within frame $F_S$.
+
+\paragraph{Physical meaning of symmetry breaking.}
+To empirically verify the auxiliary variable $\lambda$ \emph{within frame $F_S$},
+one would need to:
+\begin{enumerate}
+\item measure observables on $E$ (outside $F_S$ by definition),
+\item perform joint $SE$ tomography (which requires access to $E$), or
+\item retain records of the temporal ordering of operations during preparation
+(requiring tracking of operations outside $F_S$).
+\end{enumerate}
+
+\textbf{Crucially, all of these operations are unavailable in frame $F_S$ by construction.}
+Any measurement capable of verifying $\lambda$ would therefore constitute an
+\emph{enlargement of the operational frame}, under which the $G$-equivalence
+established at the boundary no longer holds.
+
+Thus, postulating $\lambda$ as part of the state description within $F_S$ amounts
+to claiming knowledge of information that is:
+\begin{itemize}
+\item not encoded in any $F_S$-accessible observable,
+\item not verifiable by any measurement available at the boundary, and
+\item only meaningful in an enlarged frame where $G$-symmetry is explicitly broken.
+\end{itemize}
+
+This is the precise sense in which state augmentation restores prediction only by
+abandoning faithful representation: it imports distinctions from outside the
+representational frame while claiming they belong inside it.
+
+\paragraph{Analogy to gauge freedom.}
+The situation is analogous to gauge freedom in electromagnetism:
+different gauge choices yield identical physical predictions, yet any attempt to
+promote gauge choice itself to a physical state variable breaks gauge invariance.
+Here, $G$-equivalence classes play the role of gauge orbits, while the auxiliary
+variable $\lambda$ functions as a gauge-fixing parameter that has no physical
+meaning within the gauge-invariant (operationally reduced) description.
+
+\paragraph{Optional frame refinement.}
+If the operational frame is enlarged to $F_{SE}$, granting access to measurements
+on $E$ at the boundary, the symmetry group contracts to the identity,
+$G \to \{\mathbb{I}\}$, and state sufficiency is restored at the level of
+$\rho_{SE}(B)$. The appearance of $\Sigma_2$ structure is therefore
+frame-relative but non-arbitrary: it reflects objective operational
+indistinguishability within the chosen frame.
+
+\subsection{Remark on operational meaning}
+
+In an operational frame $F_S$ where only $S$ is accessible at the boundary, the
+two preparations are indistinguishable at $B$ because they induce identical
+$\rho_S(B)$ and any boundary-accessible measurement is a function of $\rho_S(B)$.
+Nevertheless, the fixed post-boundary interaction with $E$ makes the subsequent
+reduced behavior depend on history-level information not recoverable from
+$\rho_S(B)$ alone. This is precisely the representational regime that motivates
+$\Sigma_2$ diagnostics.

@@ -1,0 +1,54 @@
+\subsection{Falsification of the $\Sigma_2$ prediction}
+
+The $\Sigma_2$ hypothesis makes a single falsifiable \emph{structural} claim:
+within a fixed operational frame and under a boundary-symmetric reduction,
+equality of reduced state at a conditioning boundary does not suffice to fix all
+future reduced diagnostics when admissible history differs.
+
+This claim is falsified if the following empirical condition holds.
+
+\begin{quote}
+\emph{For all admissible history pairs $H_A,H_B$ satisfying
+$\rho_B^{(A)} = \rho_B^{(B)}$ under a boundary-symmetric operational reduction,
+and for all subsequent evolution blocks $C$, the resulting reduced diagnostics are
+statistically indistinguishable:
+\[
+D_A(\tau) = D_B(\tau)
+\quad \text{for all probe parameters } \tau .
+\]}
+\end{quote}
+
+Demonstrating this invariance across a sufficiently rich class of admissible
+history constructions, conditioning procedures, and probe protocols would
+establish that instantaneous reduced state suffices to characterize all
+operationally accessible future behavior within the tested regime. In such a case,
+no second-order constraint structure is required.
+
+Conversely, the reproducible observation of history-dependent divergence
+$D_A(\tau) \neq D_B(\tau)$ under verified boundary-state equality constitutes
+direct evidence against state sufficiency. Under identical admissible dynamics and
+post-boundary evolution, such divergence cannot be attributed to state-local
+descriptions and therefore indicates irreducible trajectory dependence.
+
+To distinguish genuine $\Sigma_2$ effects from finite-precision artifacts, the
+protocol requires quantitative separation between diagnostic divergence and
+boundary-state mismatch. Let $\varepsilon$ denote the verified upper bound on
+state mismatch at the boundary (as determined by tomography or calibration), and
+let $\Delta D(\tau) := |D_A(\tau) - D_B(\tau)|$. A $\Sigma_2$ signature is indicated
+when
+\[
+\Delta D(\tau) \gg \mathcal{O}(\varepsilon)
+\]
+and persists under systematic refinement of boundary-state verification.
+
+Operationally, this can be established by varying $\varepsilon$ through improved
+control or post-selection while holding the admissible histories fixed. If
+$\Delta D(\tau)$ extrapolates to a nonzero value as $\varepsilon \to$ its
+experimental limit, the divergence cannot be attributed to incomplete state
+matching.
+
+The force of the test lies in its minimality. No modification of dynamics is
+invoked, no ontological commitment to hidden variables is required, and no
+environmental bookkeeping is assumed at the boundary. Any violation of the null
+condition reflects a structural limitation of state-based descriptions within the
+specified operational frame.

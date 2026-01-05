@@ -1,0 +1,136 @@
+\section{Diagnostics for Second-Order Constraints}
+\label{sec:diagnostics-sigma2}
+
+The definition of second-order constraint geometry $\Sigma_2$ in
+Sec.~\ref{sec:definition-sigma2} is purely structural. The present section
+establishes how such constraints may be diagnosed operationally, without assuming
+any particular physical mechanism or domain-specific realization.
+
+The guiding principle mirrors that of projection-induced arrow diagnostics: when a
+constraint acts at the level of histories rather than instantaneous states, any
+reduction that erases history-level relations must exhibit characteristic and
+unavoidable failures. These failures are not artifacts of poor modeling; they are
+diagnostic consequences of attempting to represent trajectory-level structure in
+a state-based language.
+
+\subsection{Operational reduction and diagnostic collapse}
+
+Let $\Pi : \mathcal{H} \to \mathcal{D}$ denote an operational reduction mapping
+admissible histories to a reduced description space $\mathcal{D}$.
+
+\begin{definition}[Faithful reduction]
+An operational reduction $\Pi$ is faithful with respect to a constraint $C$ on
+$\mathcal{H}$ if distinct admissibility classes induced by $C$ remain
+distinguishable in $\mathcal{D}$.
+\end{definition}
+
+If $\Pi$ is not faithful to a second-order constraint, then histories that differ
+only by satisfaction or violation of that constraint are necessarily mapped to the
+same reduced description. The loss is not merely informational: distinctions that
+govern admissibility in $\mathcal{H}$ become inexpressible in $\mathcal{D}$.
+
+\subsection{The diagnostic principle}
+
+This observation leads directly to a general diagnostic result.
+
+\begin{proposition}[Second-order diagnostic principle]
+\label{prop:sigma2-diagnostic}
+If an admissible-history space $\mathcal{H}$ is subject to a second-order
+constraint $C \in \Sigma_2$, then any operational reduction
+$\Pi : \mathcal{H} \to \mathcal{D}$ that discards history-level relations must
+exhibit at least one of the following features: irreducible degeneracy between
+operationally distinct preparations, apparent stochasticity or irreversibility not
+attributable to first-order dynamics, or dependence on implicit boundary conditions
+or ordering conventions.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Because $C$ cannot be factorized into state-level predicates, its satisfaction
+depends on relations between distinct segments of a history. Any reduction $\Pi$
+that represents only instantaneous or local state information necessarily
+identifies histories that differ only by $C$. Operational distinctions that track
+admissibility in $\mathcal{H}$ therefore collapse in $\mathcal{D}$, forcing at least
+one of the listed diagnostic manifestations.
+\end{proof}
+
+The proposition does not enumerate independent symptoms. It describes different
+faces of the same structural failure: the attempt to encode trajectory-dependent
+admissibility using state-local objects.
+
+\subsection{Boundary dependence and admissibility loss}
+
+One common manifestation of diagnostic collapse is the introduction of explicit or
+implicit boundary conditions. When admissibility depends on relations between
+history segments but the reduced description lacks access to those relations, the
+only remaining means of enforcing consistency is through privileged boundaries:
+initialization procedures, measurement cuts, reset conventions, or conditioning
+events.
+
+Boundary dependence here does not assert temporal asymmetry. It refers to any
+operational procedure that must fix a reference segment of a history in order to
+remain predictive. The appearance of such boundaries signals that admissibility is
+no longer encoded locally in state.
+
+This diagnostic overlaps structurally with projection-induced arrows, but the
+origin differs. In the present case, the asymmetry arises not from projection
+itself, but from the attempt to represent history-level constraints within a
+state-based framework.
+
+\subsection{Order sensitivity and non-commutativity}
+
+A second, closely related diagnostic arises when admissible transformations fail to
+commute under composition.
+
+\begin{definition}[Order sensitivity]
+A system exhibits order sensitivity if two admissible transformations
+$T_1, T_2$ satisfy
+\[
+T_2 \circ T_1 (h) \in \mathcal{H}
+\quad \text{but} \quad
+T_1 \circ T_2 (h) \notin \mathcal{H}.
+\]
+\end{definition}
+
+This non-commutativity is not algebraic but admissibility-based. Both compositions
+may be well-defined as sequences of operations, yet only one preserves membership
+in $\mathcal{H}$. Such behavior cannot be reduced to instantaneous state variables
+without explicitly encoding ordering or history information. It therefore provides
+a direct diagnostic of second-order constraint structure.
+
+\subsection{Distinction from hidden-state explanations}
+
+It is essential to distinguish $\Sigma_2$ diagnostics from hidden-variable or
+memory-based explanations. A hidden-state model restores state locality by
+augmenting the state space $\mathcal{S}$ so that admissibility becomes
+instantaneous again.
+
+A genuine second-order constraint does not disappear under such augmentation unless
+the augmentation breaks the symmetries of the admissible-history space. The
+diagnostic question is therefore not whether a state-augmented model can reproduce
+observations, but whether it can do so while preserving the original admissibility
+structure without introducing privileged parametrizations, bookkeeping variables,
+or boundary asymmetries.
+
+\subsection{Falsifiability}
+
+The $\Sigma_2$ framework is falsifiable in the same sense as other structural
+constraints. If an apparent second-order diagnostic can be eliminated by a
+symmetry-preserving, state-local reformulation—without introducing boundary
+dependence, ordering conventions, or hidden asymmetries—then the invocation of
+$\Sigma_2$ is unwarranted.
+
+Conversely, the persistence of diagnostic signatures under all faithful reductions
+constitutes evidence that admissibility is not fully state-local. In such cases,
+history-level constraint structure is not an interpretive choice but an operational
+necessity.
+
+\subsection{Scope}
+
+This section establishes diagnostic criteria only. It does not assert that any
+particular physical system instantiates second-order constraints. The role of
+$\Sigma_2$ is to make explicit when history-level structure is being implicitly
+relied upon, and to provide a principled language for assessing whether such
+structure is fundamental or merely representational.
+
+Concrete applications and empirical case studies are taken up in subsequent
+sections.
